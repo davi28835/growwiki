@@ -4,8 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GrowWiki</title>
-  <style>
-    body 
+  <style>body {
+  user-select: none; /* Impede selecionar texto */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+    
+   <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    // Bloqueia Ctrl+U, Ctrl+C, Ctrl+S, Ctrl+Shift+I e F12
+    if (
+      (e.ctrlKey && ['u', 's', 'c'].includes(e.key.toLowerCase())) ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
+      e.key === 'F12'
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+ body 
     {
       margin: 0;
       font-family: Arial, sans-serif;
