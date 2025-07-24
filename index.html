@@ -4,28 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GrowWiki</title>
-  <style>body {
-  user-select: none; /* Impede selecionar texto */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-    
-   <script>
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    // Bloqueia Ctrl+U, Ctrl+C, Ctrl+S, Ctrl+Shift+I e F12
-    if (
-      (e.ctrlKey && ['u', 's', 'c'].includes(e.key.toLowerCase())) ||
-      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
-      e.key === 'F12'
-    ) {
-      e.preventDefault();
-    }
-  });
+  <style> 
 </script>
  body 
     {
@@ -105,6 +84,7 @@
     <button onclick="showSection('frutas')">Frutas e Preços</button>
     <button onclick="showSection('pets')">Pets</button>
     <button onclick="showSection('mutacoes')">Mutações Climáticas</button>
+    <button onclick="showSection('codigos')">codigos</button>
   </nav>
 
   <div class="content">
@@ -294,10 +274,35 @@ Relâmpago: Chance de obter a mutação Shocked (Fruta eletrificada, valor x3).
 Eclipse: Chance de obter a mutação Moonlit (Fruta encantada, valor x4).
 Vulcão: Chance de obter a mutação Molten (Fruta derretida).
 Tempestade Mágica: Chance rara de obter qualquer mutação aleatória com bônus extra de XP
-Tranquil: Frutas com a mutação Tranquil são essenciais para conseguir Chi, a nova moeda do jogo. Você as troca com o Tanuki na Zen Shop..</pre>
+Tranquil: Frutas com a mutação Tranquil são essenciais para conseguir Chi, a nova moeda do jogo. Você as troca com o Tanuki na Zen Shop..
+.</pre>
     </section>
-  </div>
+    <section id="codigos">
+      <h2>codigos</h2>
+      <pre>os codigos podem te dar recompensas gratis como Seedpacks para evoluir seu jardim
 
+codigos ativos de Grow a Garden
+
+-torigate
+
+codigos expirados de Grow a Garden
+
+-FEIJOA50
+-ALIEN50
+-MEGAEGG
+-MEGAEVENT25
+-MEGASUMMER
+-MEGAHARVEST
+-LUNARGLOW10
+-BIZZY25
+-BIZZYBEES25
+-BEES10
+-BUZZINGEVENT20
+-3BILLION
+-2BILLION
+-9MCCU
+-rLOCKFRUIT10
+        
   <script>
     function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
