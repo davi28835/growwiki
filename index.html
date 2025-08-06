@@ -1,187 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <title>GrowWiki</title>
+  <link rel="icon" type="image/png" href="icone.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grow a Garden Wiki</title>
   <style>
-     body {
+    * {
       margin: 0;
-  font-family: Arial, sans-serif;
-  color: #555555;
-  font-size: 22px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-  background-image: url('fundo.png');
-  background-repeat: no-repeat;
-  background-position: center center; 
-  background-size: cover;
-  background-attachment: fixed;
+    body {
+      background-color: #2c2c2c;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+    }
 
-  <img src="esquerda.png" alt="Imagem esquerda" style="position: fixed; top: 50%; left: 0; transform: translateY(-50%); width: 40px; z-index: 100;">
-<img src="direita.png" alt="Imagem direita" style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); width: 40px; z-index: 100;"> 
-
-    }
-  header {
-  background-image: url('fundo.png');
-  background-size: cover;
-  background-position: center;
-  height: 150px; 
-  padding: 46px;
-  color: black;
-  font-size: 22px;
-}
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-    nav button {
-      background-color: #2f3030;
-      color: white;
-      border: none;
-      padding: 23px 28px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 6px;
-      font-size: 22px;
-    }
-    nav button:hover {
-      background-color: #444544;
-    }
-    section {
-      display: none;
+    .sidebar {
+      width: 220px;
+      background-color: #3a3a3a;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
-    section.active {
+
+    .sidebar button {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background-color: #5a5a5a;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sidebar button:hover {
+      background-color: #777;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      background-color: #3d3d3d;
+      margin: 40px;
+      border-radius: 20px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
       display: block;
     }
-    @media (max-width: 600px) {
-      nav button {
-        display: block;
-        width: 90%;
-        margin: 10px auto;
-        font-size: 24px;
-      }
+
+    @media (max-width: 768px) {
       body {
-        font-size: 24px;
+        flex-direction: column;
       }
-      header {
-        font-size: 20px;
+      .sidebar {
+        flex-direction: row;
+        width: 100%;
+        border-radius: 0;
+        justify-content: space-around;
       }
-    }
-    .content {
-      max-width: 900px;
-      margin: auto;
-    }
-    pre {
-      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
-  <div class="pix-info">
-  Quer ajudar o projeto? Mande um pix pra cá: davisalvador852@gmail.com
-</div>
-  <nav>
+
+  <div class="sidebar">
     <button onclick="showSection('frutas')">Frutas e Preços</button>
     <button onclick="showSection('pets')">Pets</button>
     <button onclick="showSection('mutacoes')">Mutações Climáticas</button>
-    <button onclick="showSection('codigos')">codigos</button>
-  </nav>
+    <button onclick="showSection('codigos')">Códigos</button>
+  </div>
 
   <div class="content">
-    <section id="frutas" class="active">
-      <h2>Frutas e Preços</h2>
-      <pre>Cenoura: ~10 Sheckles (Colheita única)
-        
-Morango: ~50 Sheckles (Multi-colheita)
-        
-Mirtilo: ~400 Sheckles (Multi-colheita)
-        
-Tomate: ~800 Sheckles (Multi-colheita)
-        
-Couve-flor: ~61 Sheckles (Multi-colheita)
-        
-Melancia: ~2.500 Sheckles (Colheita única)
-        
-Abóbora: ~3.000 Sheckles (Colheita única)
-        
-Maçã: ~3.250 Sheckles (Multi-colheita)
-        
-Rafflesia: ~3.157 Sheckles (Colheita única)
-        
-Bamboo: ~3.610 Sheckles (Colheita única)
-        
-Cenoura Selvagem: ~46.000 Sheckles (Obtido em Pacote de Sementes de Verão)
-        
-Pera: ~18.000 Sheckles (Obtido em Pacote de Sementes de Verão)
-        
-Venus Fly Trap: ~17.000 Sheckles (Evento Angry Plant)
-        
-Traveler's Fruit: ~53.151 Sheckles (Loja de Verão)
-        
-Manga: ~6.308 Sheckles (Multi-colheita)
-        
-Uva: ~7.554 Sheckles (Multi-colheita)
-        
-Cogumelo: ~142.443 Sheckles (Colheita única)
-        
-Pimenta: ~7.577 Sheckles (Multi-colheita)
-        
-Coco: ~361 Sheckles (Multi-colheita)
-        
-Banana: ~1.000 Sheckles (Multi-colheita)
-        
-Papaia: ~1.000 Sheckles (Multi-colheita)
-        
-Girassol: ~135.000 Sheckles (Evento Bizzy Bees)
-        
-Dragon Pepper: ~100.000 Sheckles (Pacote de Sementes de Crafter)
-        
-Moon Blossom: ~54.150 Sheckles (Pacote de Sementes Noturnas Premium)
-        
-Fossillight: ~80.000 Sheckles (Pacote de Sementes Pré-históricas)
-        
-Ember Lily: ~50.000 Sheckles (Loja de Sementes)
-        
-Suncoil: ~72.000 Sheckles (Criação de Bizzy Bear)
-        
-Grand Volcania: ~75.000 Sheckles (Estação de Criação)
-        
-Moon Mango: ~45.125 Sheckles (Loja do Crepúsculo)
-        
-Sugar Apple: ~40.000 Sheckles (Loja de Sementes)
-        
-Lumira: ~75.000 Sheckles (Bizzy Bear)
-        
-Boneboo: ~300.000 Sheckles (Pacote de Sementes Pré-históricas)
-        
-Bendaboo: ~250.000 Sheckles (Pacote de Sementes de Crafter)
-        
-Lírio do Vale: (Obtido em Evento)
-        
-Maple Apple   ~ 1.200 Sheckles Zen Seed Packs
-        
-Spiked Mango  ~ 1.800 Sheckles Zen Shop (75 Chi) ou Zen Seed Packs
-        
-Hinomai  ~ 2.200 Sheckles Zen Seed Pack 
-        
-Soft Sunshine ~ 2.500 Sheckles Compre na Zen Shop (15 Chi, Árvore Zen Nível 3). 
-        
-Taro Flower  ~ 3.000 Sheckles Mais comum em Zen Seed Packs.
-        
-Serenity  ~ 4.500 Sheckles Mais comum em Zen Seed Packs.
-        
-Monoblooma  ~ 5.000 Sheckles Mais comum em Zen Seed Packs. 
-        
- Zenflare  ~ 6.000 Sheckles Compre na Zen Shop (6 Chi, Árvore Zen Nível 1). 
-        
- **Zen Rocks**  ~ 7.000 Sheckles Encontre em Zen Seed Packs.</pre>
-    </section>    
+    <h1>Grow a Garden Wiki 🌱</h1>
 
-    <section id="pets">
+    <div id="frutas" class="section active">
+      <h2>Frutas e Preços</h2>
+      <pre>
+•Cenoura: ~10 Sheckles (Colheita única)
+-        
+•Morango: ~50 Sheckles (Multi-colheita)
+-        
+•Mirtilo: ~400 Sheckles (Multi-colheita)
+-        
+•Tomate: ~800 Sheckles (Multi-colheita)
+-    
+•Couve-flor: ~61 Sheckles (Multi-colheita)
+-        
+•Melancia: ~2.500 Sheckles (Colheita única)
+-        
+•Abóbora: ~3.000 Sheckles (Colheita única)
+-        
+•Maçã: ~3.250 Sheckles (Multi-colheita)
+-      
+•Rafflesia: ~3.157 Sheckles (Colheita única)
+-      
+•Bamboo: ~3.610 Sheckles (Colheita única)
+-        
+•Cenoura Selvagem: ~46.000 Sheckles (Obtido em Pacote de Sementes de Verão)
+-        
+•Pera: ~18.000 Sheckles (Obtido em Pacote de Sementes de Verão)
+-        
+•Venus Fly Trap: ~17.000 Sheckles (Evento Angry Plant)
+-        
+•Traveler's Fruit: ~53.151 Sheckles (Loja de Verão)
+-        
+•Manga: ~6.308 Sheckles (Multi-colheita)
+-        
+•Uva: ~7.554 Sheckles (Multi-colheita)
+-        
+•Cogumelo: ~142.443 Sheckles (Colheita única)
+-        
+•Pimenta: ~7.577 Sheckles (Multi-colheita)
+-        
+•Coco: ~361 Sheckles (Multi-colheita)
+-        
+•Banana: ~1.000 Sheckles (Multi-colheita)
+-       
+•Papaia: ~1.000 Sheckles (Multi-colheita)
+-        
+•Girassol: ~135.000 Sheckles (Evento Bizzy Bees)
+-        
+•Dragon Pepper: ~100.000 Sheckles (Pacote de Sementes de Crafter)
+-        
+•Moon Blossom: ~54.150 Sheckles (Pacote de Sementes Noturnas Premium)
+-        
+•Fossillight: ~80.000 Sheckles (Pacote de Sementes Pré-históricas)
+-        
+•Ember Lily: ~50.000 Sheckles (Loja de Sementes)
+-        
+•Suncoil: ~72.000 Sheckles (Criação de Bizzy Bear)
+-        
+•Grand Volcania: ~75.000 Sheckles (Estação de Criação)
+-        
+•Moon Mango: ~45.125 Sheckles (Loja do Crepúsculo)
+-        
+•Sugar Apple: ~40.000 Sheckles (Loja de Sementes)
+-       
+•Lumira: ~75.000 Sheckles (Bizzy Bear)
+-        
+•Boneboo: ~300.000 Sheckles (Pacote de Sementes Pré-históricas)
+-        
+•Bendaboo: ~250.000 Sheckles (Pacote de Sementes de Crafter)
+-       
+•Lírio do Vale: (Obtido em Evento)
+-        
+•Maple Apple   ~ 1.200 Sheckles Zen Seed Packs
+-        
+•Spiked Mango  ~ 1.800 Sheckles Zen Shop (75 Chi) ou Zen Seed Packs
+-        
+•Hinomai  ~ 2.200 Sheckles Zen Seed Pack 
+-        
+•Soft Sunshine ~ 2.500 Sheckles Compre na Zen Shop (15 Chi, Árvore Zen Nível 3). 
+-        
+•Taro Flower  ~ 3.000 Sheckles Mais comum em Zen Seed Packs.
+-        
+•Serenity  ~ 4.500 Sheckles Mais comum em Zen Seed Packs.
+-        
+•Monoblooma  ~ 5.000 Sheckles Mais comum em Zen Seed Packs. 
+-        
+•Zenflare  ~ 6.000 Sheckles Compre na Zen Shop (6 Chi, Árvore Zen Nível 1). 
+ -       
+• **Zen Rocks**  ~ 7.000 Sheckles Encontre em Zen Seed Packs.
+    </div>
+
+    <div id="pets" class="section">
       <h2>Pets</h2>
-      <pre>Bicho de Estimação - Probabilidade de Aparição
+      <pre>Pets
+Bicho de Estimação - Probabilidade de Aparição
 
 
 Common Egg 50,000 Sheckles:	
@@ -375,12 +379,13 @@ Kitsune: 0.08%
         
 Pet Exclusivo da Zen Shop:
 Koi: Pode ser comprado diretamente na Zen Shop por 45 Chi (requer Nível 4 da Árvore Zen).
-        
-    .</pre>
-    </section>
-    <section id="mutacoes">
+    </div>
+
+    <div id="mutacoes" class="section">
       <h2>Mutações Climáticas</h2>
-      <pre>Eventos climáticos podem causar mutações nas suas plantas, alterando seus valores ou propriedades:
+      <pre>
+Mutações Climáticas
+Eventos climáticos podem causar mutações nas suas plantas, alterando seus valores ou propriedades:
 
 Geada:
 Efeitos
@@ -524,11 +529,13 @@ evoluem sua arvore Zen
      Corrupted event:
 pode deixar suas frutas com efeito corrompido essas frutas podem ser trocadas com o npc 
 corrupted channeller por corrupted points (em pesquisa....) 
-.</pre>
-    </section>
-    <section id="codigos">
-      <h2>codigos</h2>
-      <pre>os codigos podem te dar recompensas gratis como Seedpacks para evoluir seu jardim
+    </div>
+
+    <div id="codigos" class="section">
+      <h2>Códigos</h2>
+      <pre>• 
+codigos
+os codigos podem te dar recompensas gratis como Seedpacks para evoluir seu jardim
 
 codigos ativos de Grow a Garden
 
@@ -551,12 +558,18 @@ codigos expirados de Grow a Garden
 -2BILLION
 -9MCCU
 -rLOCKFRUIT10
-        
+    </div>
+  </div>
+
   <script>
     function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
       document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>
+ 
