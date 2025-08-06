@@ -18,6 +18,7 @@
       color: #fff;
       display: flex;
       min-height: 100vh;
+      flex-direction: row;
     }
 
     .sidebar {
@@ -29,6 +30,7 @@
       gap: 15px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
+      flex-shrink: 0;
     }
 
     .sidebar button {
@@ -42,8 +44,10 @@
       transition: background 0.3s;
     }
 
-    .sidebar button:hover {
+    .sidebar button:hover,
+    .sidebar button:focus {
       background-color: #777;
+      outline: none;
     }
 
     .content {
@@ -57,6 +61,7 @@
 
     h1 {
       margin-bottom: 20px;
+      font-size: 1.8rem;
     }
 
     .section {
@@ -67,15 +72,61 @@
       display: block;
     }
 
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .content {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+
     @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
+
       .sidebar {
         flex-direction: row;
         width: 100%;
         border-radius: 0;
         justify-content: space-around;
+        padding: 10px;
+      }
+
+      .sidebar button {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      .content {
+        margin: 10px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar button {
+        font-size: 0.8rem;
+        padding: 8px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      pre {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -94,8 +145,7 @@
 
     <div id="frutas" class="section active">
       <h2>Frutas e Preços</h2>
-      <pre>
-•Cenoura: ~10 Sheckles (Colheita única)
+      <pre>•Cenoura: ~10 Sheckles (Colheita única)
 -        
 •Morango: ~50 Sheckles (Multi-colheita)
 -        
@@ -179,7 +229,7 @@
 -        
 •Zenflare  ~ 6.000 Sheckles Compre na Zen Shop (6 Chi, Árvore Zen Nível 1). 
  -       
-• **Zen Rocks**  ~ 7.000 Sheckles Encontre em Zen Seed Packs.
+• **Zen Rocks**  ~ 7.000 Sheckles Encontre em Zen Seed Pack</pre>
     </div>
 
     <div id="pets" class="section">
@@ -378,13 +428,12 @@ Kitsune: 0.08%
 
         
 Pet Exclusivo da Zen Shop:
-Koi: Pode ser comprado diretamente na Zen Shop por 45 Chi (requer Nível 4 da Árvore Zen).
+Koi: Pode ser comprado diretamente na Zen Shop por 45 Chi (requer Nível 4 da Árvore Zen).</pre>
     </div>
 
     <div id="mutacoes" class="section">
       <h2>Mutações Climáticas</h2>
-      <pre>
-Mutações Climáticas
+      <pre>Mutações Climáticas
 Eventos climáticos podem causar mutações nas suas plantas, alterando seus valores ou propriedades:
 
 Geada:
@@ -529,12 +578,12 @@ evoluem sua arvore Zen
      Corrupted event:
 pode deixar suas frutas com efeito corrompido essas frutas podem ser trocadas com o npc 
 corrupted channeller por corrupted points (em pesquisa....) 
+    </pre>
     </div>
 
     <div id="codigos" class="section">
       <h2>Códigos</h2>
-      <pre>• 
-codigos
+      <pre>codigos
 os codigos podem te dar recompensas gratis como Seedpacks para evoluir seu jardim
 
 codigos ativos de Grow a Garden
@@ -558,6 +607,7 @@ codigos expirados de Grow a Garden
 -2BILLION
 -9MCCU
 -rLOCKFRUIT10
+</pre>
     </div>
   </div>
 
@@ -572,4 +622,4 @@ codigos expirados de Grow a Garden
 
 </body>
 </html>
- 
+
